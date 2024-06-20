@@ -11,6 +11,39 @@ $rankColor: rgb(194, 40, 40);
     src: url(../fonts/AnimeFont.ttf);
   }
 
+div.button-container
+{
+    position: fixed;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid red;
+
+    button{
+        width: 70px;
+        height:70px;
+        border-radius: 50px;
+        border:1px solid blue;
+        background-color: white;
+        margin:10px;
+    }
+
+    .show-gallery{
+        background-image: url("../img/galleryicon.png");
+        background-position: center;
+        background-size: cover;
+        background-color: rgb(101, 162, 182);
+    }
+    .add-character{
+        border:1px solid green;
+    }
+}
+
+
+
+
+
+
+
 
 @mixin flexCenter
 {
@@ -30,7 +63,7 @@ $rankColor: rgb(194, 40, 40);
 
 div.background-gradient
 {
-    height:120vh;
+    height:1200px;
     @include flexCenter();
     background: rgb(235,229,11);
     background: linear-gradient(135deg, rgba(245,244,220,1) 0%, rgba(255,225,159,1) 100%);
