@@ -1,0 +1,117 @@
+div.add-hero-container
+{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    right:-40%;
+    height:100vh;
+    width:40%;
+    background-color: white;
+    z-index: 5;
+    background: rgb(235,229,11);
+    background: linear-gradient(135deg, rgb(172, 170, 116) 0%, rgb(150, 125, 71) 100%);
+    border-left: 4px ridge rgb(170, 123, 21);
+    
+
+    div.hero-list
+    {
+        margin: 50px 0;
+        width:80%;
+        border: 2px solid rgb(126, 103, 53);
+        overflow-y: auto;
+
+        div.single-hero-container
+        {       
+            display:flex;
+            margin-top: 10px;
+            border: 2px solid rgba(126, 103, 53, 0);
+            background-color:rgba(255, 255, 255, 0.158);
+            transition: 0.4s;
+            cursor: pointer;
+            overflow: hidden;
+
+            &:first-of-type
+            {
+                margin-top: 0;
+            }
+
+            img 
+            {
+                object-fit: cover;
+                width: 180px;
+                height:100px;
+                transition: 0.4s;
+                opacity: 0.8;
+            }
+
+            div.hero-name
+            {
+                @include flexCenter();
+                width:67%;
+                font-size: 30px;
+
+            }
+            
+            &:hover
+            {
+                background-color:rgba(255, 255, 255, 0.384);
+                border: 2px solid rgb(126, 103, 53);
+                letter-spacing: 4px;
+            }
+
+        }
+
+    }
+
+}
+
+.hide-side-panel
+{
+    animation-name: hideSidePanel;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: both;
+}
+
+.show-side-panel
+{
+    animation-name: showSidePanel;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+}
+
+
+@keyframes hideSidePanel {
+    0% { transform:translateX(-100%); }
+    100% { transform:translateX(0px); }
+}
+
+@keyframes showSidePanel {
+    0% { transform:translateX(0px); }
+    100% { transform:translateX(-100%); }
+}
+
+
+div.close-hero-panel
+{
+    @include flexCenter();
+    position: absolute;
+    right:20px;
+    top:20px;
+    font-size: 20px;
+    color: white;
+    background-color: $rankColor;
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgb(126, 103, 53);
+    cursor: pointer;
+    transition: 0.3s ease-out;
+
+    &:hover{
+        background-color: rgb(175, 18, 18);
+        transform: scale(120%);
+        border-radius: 10px;
+    }
+
+}
